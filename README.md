@@ -1,134 +1,167 @@
-Automate your macOS setup
-===
+<p align="center">
+  <img src="https://img.shields.io/badge/macOS-12%20→%2026-000000?style=for-the-badge&logo=apple&logoColor=white" alt="macOS 12-26">
+  <img src="https://img.shields.io/badge/Shell-ZSH-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white" alt="ZSH">
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License">
+  <img src="https://img.shields.io/badge/by-i--pro.by-FF6B00?style=for-the-badge" alt="i-pro.by">
+</p>
 
-**Welcome to the macOS Scripted Setup.<br>This project helps Mac users quickly and easily set up a new computer or useraccount by automatically configuring a range of system settings and installing commonly used applications.**
-
-> [!TIP]
-> The scripted setup was tested on Intel-based Macs & Apple Silicon Macs
-> On macOS 12 Monterey up to macOS 26 Tahoe
-
-
-## What is this?
-
-The macOS Scripted Setup is **perfect for users who want to save time and avoid the hassle of manually changing settings and installing apps**. The whole project, but particularly the configuration file, is **portable** - so you can keep them on a USB-stick for the next Mac setup. Give it a try and streamline your new Mac setup process!
-
-![Screenshot of macOS Scripted Setup in action](/README_demo.png?raw=true)
-
-The script is easy to use and can be run directly from the Terminal application, as a regular user or admin user. It automatically performs a series of commands to change default macOS settings and download applications. It's designed to be widely backward and forward compatible with various macOS versions.
-
-**All settings can be configured.** Some features include enabling the firewall, setting better security features, customising the Finder, Dock, and Mission Control for better productivity; and many more. Additionally, the script installs applications such as browsers, media players, productivity apps, and web development tools.
-
-### What is being done exactly?
-
-<details>
-<summary>See what features, settings, and applications can be changed / installed</summary>
-
-### The script can change the following settings:
-
-* FileVault, macOS Firewall, Mission Control, Control Centre, customize Dock, Finder, Display Settings, git, SSH Key, adds Userhome folders, Night Shift, Menu bar clock, Fast User Switching, Text and Keyboard input, and [more](https://github.com/Swiss-Mac-User/macOS-scripted-setup/tree/installer/Usersettings).
-
-### …and is capable of installing these Apps:
-
-Some Apps are downloaded from the official websites, other are added through Homebrew or its Mac App Store CLI extension.
-
-* 1Password, AlDente, Beyond Compare, Boop, Brave, Composer, Discord, Docker, eqMac, Fig, Firefox, Fork, GasMask, Git, Google Chrome, Homebrew, Hedit, Keka, Linear Mouse, MAMP, Notion, Nova, Pixelmator Pro, Quick Look plugins, Rosetta 2, Safari extensions, Sequel Ace, SonarQube, Spotify, Steam, Strongbox, Telegram, Transmission, Tresorit, Warp, Xcode Command Line Tools, Xnapper, and [more](https://github.com/Swiss-Mac-User/macOS-scripted-setup/tree/installer/Applications).
-</details>
-
-
-## 📥 Download macOS Scripted Setup
-
-Automatic download with this command in the `Terminal.app` from Applications » Utilities:
-
-```bash
-curl -SL "https://github.com/Swiss-Mac-User/macOS-scripted-setup/archive/refs/heads/installer.zip" | tar xz -C "$HOME/Downloads" && open "$HOME/Downloads/macOS-scripted-setup-installer"
-```
-
-→ Alternatively you can manually download & extract the latest «Source code (zip)» [from Releases](/../../releases) to your `~/Downloads/` folder.
-
-## ⚙️ Configure your preferences
-
-### 🪄 Use the Config Wizard
-
-Download the «**Config Wizard macOS Scripted Setup**»-App from [Releases](https://github.com/Swiss-Mac-User/macOS-scripted-setup/releases)
-
-1. Launch the App and follow the guide
-
-2. At the end you can **directly 🚀 start the scripted Setup** with the config created!
-
-### 🧑‍💻 For Nerds: manually create a config file
-
-1. Duplicate the file `config.default.sh` as `config.sh`
-
-2. Open `config.sh` in a Text editor (e.g. `TextEdit.app`)
-
-3. …and change all settings to your personal preferences, using `true`/`false`.
-
-> [!WARNING]
-> If no `config.sh`-file is present, the setup will use the default configs from `config.default.sh`!</sup>
-
-### Advanced settings
-<details>
-<summary>Configuring custom bash commands to run</summary>
-
-If you want to run additional bash commands as part of the setup, you can duplicate the template-file `mycommands.template.sh` as `mycommands.sh`, and populate it with any commands. These custom commands will be executed LAST in the whole setup (see the `run.sh` file).
-
-</details>
-
-
-## 🚀 Start the scripted Setup
-
-> [!TIP]
-> **Occasionally you have to interact** when instructions show up, such as to sign-in on the Mac App Store.
-
-Maybe now is the time to [grab a coffee ☕️](https://bmc.link/swissmacuser/)…
-
-1. Open the «Terminal.app» from Applications » Utilities
-
-2. Paste the following command to the Terminal.app:
-
-```bash
-cd ~/Downloads/macOS-scripted-setup-installer/ && chmod +x ./run.sh && ./run.sh
-```
-
-3. Now start the setup by pressing `Return` &  watch the magic happen…
-
-**✨ That's it - happy installation! :)**
-
-### 🔄 Continuing a partial setup…
-
-The installation keeps track of completed steps in a separate `config.rerun.sh`-file.
-
-If you want to continue a partial installation, simply trigger the `./run.sh` again in Terminal.app:
-
-```bash
-cd ~/Downloads/macOS-scripted-setup-installer/ && chmod +x ./run.sh && ./run.sh
-```
-
-
-## Requests for changes
-
-### Issues and feature requests
-Report an [Issue](/../../issues) or start a [new Discussion](/../../discussions) for feedback or help.
-
-### Contributions
-Feel free to [fork this project](/../../fork) and add Pull Requests for any suggested changes or additions!
-
+<h1 align="center">🍎 macOS Scripted Setup</h1>
+<p align="center">
+  <strong>Автоматическая настройка и установка приложений на macOS</strong><br>
+  <em>от <a href="https://i-pro.by">i-pro.by</a> — IT-решения для бизнеса и жизни</em>
+</p>
 
 ---
 
-<p align="center"><a href="https://bmc.link/swissmacuser/">
-    <img src="https://cdn.buymeacoffee.com/buttons/default-yellow.png" alt="Support this project with a Coffee." height="40" width="172">
-</a></p>
+## 🚀 Что это?
 
-### Inspiration and Kudos
+Скриптовый установщик для macOS, который **автоматически настраивает систему и устанавливает приложения** на новом Mac. Работает на Intel и Apple Silicon, совместим с macOS 12 Monterey → macOS 26 Tahoe.
 
-A **BIG «THANK YOU»** to these inspiring and helpful sources! 🫶 Make sure to check them out and leave a kudos.
+![Screenshot of macOS Scripted Setup in action](/README_demo.png?raw=true)
 
-* Yann Bertrand's awesome work with «[macOS-defaults](https://github.com/yannbertrand/macos-defaults)»
-* Patrick Force's approach with «[macOSa](https://github.com/rockholla/macosa)» (which was a bit too complex for my use case…)
-* Ryan Pavlick's helpful «[add_to_dock](https://github.com/ryanpavlick/add_to_dock)» bash scripts
-* Mathias Bynens's epic «[dotfiles](https://github.com/mathiasbynens/dotfiles)» (particularly its [.macos](https://github.com/mathiasbynens/dotfiles/blob/main/.macos))!
-* Big KUDOS to «[Homebrew](https://github.com/Homebrew/install)» and the «[Mac App Store command line interface](https://github.com/mas-cli/mas)»! 👏
-* MacRumors «[Dock to Show Running Apps Only](https://www.macrumors.com/how-to/macos-dock-show-active-apps/)», Ask Different «[identify if Filevault is enabled](https://apple.stackexchange.com/q/70969/86244)» and «[Check if OS X user is Administrator](https://apple.stackexchange.com/a/179531/86244)»
-* The awesome Night Shift config tool «[nightlight](https://github.com/smudge/nightlight)»
-* @i1rr's helpful Mac «[Steam ARM64](https://github.com/i1rr/steam-arm64-mac)»-script for macOS
+**Идеально подходит для:**
+- 🏢 Развёртывания Mac для сотрудников компании
+- 💻 Быстрой настройки нового MacBook
+- 🔄 Восстановления конфигурации после переустановки macOS
+- 📦 Стандартизации рабочего окружения
+
+---
+
+## 📋 Возможности
+
+<details>
+<summary><strong>⚙️ Системные настройки (клик чтобы раскрыть)</strong></summary>
+
+| Категория | Что настраивается |
+|-----------|-------------------|
+| 🔒 Безопасность | FileVault, Firewall, экран входа, пароль заставки |
+| ⚙️ Сервисы | Time Machine, AirDrop через Ethernet, автообновления |
+| 🖥️ Интерфейс | Меню-бар, Mission Control, прозрачность, прокрутка |
+| ⌨️ Ввод | Автокоррекция, трекпад, мышь, клавиша fn |
+| 📁 Finder | Вид окон, расширения файлов, скриншоты, Spotlight |
+| 🚀 Dock | Автоскрытие, очистка, анимации, только активные |
+| 🌙 Дисплей | Night Shift, все разрешения |
+| 💻 Терминал | UTF-8, кастомные темы, .zshrc |
+
+</details>
+
+<details>
+<summary><strong>📦 Устанавливаемые приложения (клик чтобы раскрыть)</strong></summary>
+
+| Категория | Приложения |
+|-----------|------------|
+| 🔧 Базовые | Homebrew, Xcode CLT, Rosetta 2 |
+| 🗜 Файлы | Keka, QuickLook-плагины |
+| 🌐 Браузеры | Firefox, Brave, Google Chrome |
+| 💼 Офис | Microsoft Office 365, Notion, 1Password, Strongbox |
+| 🎵 Медиа | VLC, Spotify, eqMac, Pixelmator Pro |
+| 🛠 Утилиты | AlDente, LinearMouse, OverSight, Sentinel, Xnapper, Warp |
+| 💬 Общение | Telegram, AyuGram, Discord, Halloy IRC |
+| 🧑‍💻 Разработка | Git, VS Code, Fork, Nova, Docker/OrbStack, Node.js, Composer, MAMP, Sequel Ace, SonarQube |
+| 🎮 Игры | Steam, Heroic Games Launcher |
+
+</details>
+
+---
+
+## 📥 Быстрый старт
+
+### 1. Скачать
+
+Откройте **Terminal.app** и выполните:
+
+```bash
+curl -SL "https://github.com/iproby/macOS-scripted-setup/archive/refs/heads/installer.zip" | tar xz -C "$HOME/Downloads" && open "$HOME/Downloads/macOS-scripted-setup-installer"
+```
+
+Или скачайте ZIP из [Releases](../../releases).
+
+### 2. Настроить
+
+**Вариант А** — используйте **Config Wizard** (скачайте из [Releases](../../releases))
+
+**Вариант Б** — вручную:
+```bash
+cp config.default.sh config.sh
+open -a TextEdit config.sh
+```
+Измените настройки на `true` / `false` под ваши нужды.
+
+> [!WARNING]
+> Без файла `config.sh` будут использованы дефолтные настройки из `config.default.sh`
+
+### 3. Запустить
+
+```bash
+cd ~/Downloads/macOS-scripted-setup-installer/ && chmod +x ./run.sh && ./run.sh
+```
+
+> [!TIP]
+> Время от времени потребуется ввод — следуйте инструкциям на экране.
+
+### 4. Продолжить (если прервали)
+
+Прогресс сохраняется в `config.rerun.sh`. Просто запустите `./run.sh` снова.
+
+---
+
+## 🗂 Структура проекта
+
+```
+macOS-scripted-setup/
+├── run.sh                  # Главный скрипт-оркестратор
+├── helpers.sh              # Утилитные функции
+├── config.default.sh       # Настройки по умолчанию
+├── config.sh               # Ваши настройки (создать вручную)
+├── mycommands.template.sh  # Шаблон для кастомных команд
+├── Applications/           # Скрипты установки приложений (50+)
+├── Usersettings/           # Настройки пользователя
+├── Systemservices/         # Системные сервисы
+└── FilesFolders/           # Файлы и папки
+```
+
+---
+
+## ❓ FAQ
+
+<details>
+<summary><strong>Безопасно ли это запускать?</strong></summary>
+
+Да. Все скрипты открыты и доступны для проверки. Перед запуском делается синтаксическая проверка всех файлов. Скрипт использует только стандартные утилиты macOS (`defaults`, `curl`, `hdiutil`).
+
+</details>
+
+<details>
+<summary><strong>Можно ли запускать повторно?</strong></summary>
+
+Да. Скрипт отслеживает прогресс и пропускает уже выполненные шаги.
+
+</details>
+
+<details>
+<summary><strong>Какие версии macOS поддерживаются?</strong></summary>
+
+macOS 12 Monterey, 13 Ventura, 14 Sonoma, 15 Sequoia, 25 и 26 Tahoe. Работает на Intel и Apple Silicon.
+
+</details>
+
+---
+
+## 🤝 Участие в разработке
+
+- 🐛 Нашли баг? → [Создайте Issue](../../issues)
+- 💡 Есть идея? → [Начните Discussion](../../discussions)
+- 🔧 Хотите помочь? → [Fork и Pull Request](../../fork)
+
+---
+
+## 📜 Лицензия
+
+MIT License — свободное использование, модификация и распространение.
+
+---
+
+<p align="center">
+  <strong>🍎 Сделано с ❤️ командой <a href="https://i-pro.by">i-pro.by</a></strong><br>
+  <sub>Основано на проекте <a href="https://github.com/Swiss-Mac-User/macOS-scripted-setup">Swiss-Mac-User/macOS-scripted-setup</a></sub>
+</p>

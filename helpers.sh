@@ -233,7 +233,7 @@ function downloadFromUrl(){
         #  -f = fail silently on server errors
         #  -# = show a progress bar (instead of a table)
         #  -A = use a custom User Agent string
-        curl -SLf\# "$1" -o "$downloadPath" -A "macOS-scripted-setup/1.0 (compatible; +https://github.com/Swiss-Mac-User/macOS-scripted-setup)"
+        curl -SLf\# "$1" -o "$downloadPath" -A "macOS-scripted-setup/2.0 (compatible; +https://github.com/iproby/macOS-scripted-setup)"
     else
         showinfo "Missing URL or download target path" "error"
     fi
