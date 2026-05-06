@@ -163,5 +163,4 @@ MIT License — свободное использование, модифика�
 
 <p align="center">
   <strong>🍎 Сделано с ❤️ командой <a href="https://i-pro.by">i-pro.by</a></strong><br>
-  <sub>Основано на проекте <a href="https://github.com/Swiss-Mac-User/macOS-scripted-setup">Swiss-Mac-User/macOS-scripted-setup</a></sub>
 </p>
