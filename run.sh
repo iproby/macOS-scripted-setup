@@ -499,9 +499,9 @@ for app in "$SCRIPT_DIR"/Applications/*.sh; do
     [ -r "$app" ] && source "$app" > /dev/null
 done
 unset app
-# -- DISABLE macOS Gatekeepr (if enabled) --
+# -- DISABLE macOS Gatekeeper (if enabled) --
 if macosGatekeeper; then
-    showinfo "DISABLING Gatekeeper to allow unsiged Applications:" "note"
+    showinfo "DISABLING Gatekeeper to allow unsigned Applications:" "note"
     macosGatekeeper "off"
     showinfo "" "confirm"
 fi
@@ -695,6 +695,13 @@ if [ "$installTelegram" = true ]; then
     installAppTelegram
     showinfo "" "confirm"
     storeprogress "installTelegram" "$rerunconfig"
+fi
+# -- AyuGram.app --
+if [ "$installAyuGram" = true ]; then
+    showinfo "Installing AyuGram Desktop:" "note"
+    installAppAyuGram
+    showinfo "" "confirm"
+    storeprogress "installAyuGram" "$rerunconfig"
 fi
 # -- Transmission.app --
 if [ "$installTransmission" = true ]; then
@@ -999,9 +1006,9 @@ if checkIfFileExists "$HOME/Applications"; then
    showinfo "" "confirm"
 fi
 
-# -- ENABLE macOS Gatekeepr (if disabled) --
+# -- ENABLE macOS Gatekeeper (if disabled) --
 if ! macosGatekeeper; then
-    showinfo "ENABLING Gatekeeper to disallow unsiged Applications:" "note"
+    showinfo "ENABLING Gatekeeper to disallow unsigned Applications:" "note"
     macosGatekeeper "on"
     showinfo "" "confirm"
 fi
@@ -1013,7 +1020,7 @@ fi
 # ------------------------------
 showinfo "APPLY APP CONFIGURATIONS" "shout"
 # -- Dock customizations --
-if [ "$beautifyDock" = true ] && [ ! "$minimalDock" ]; then
+if [ "$beautifyDock" = true ] && [ "$minimalDock" != true ]; then
     showinfo "Beautifying the Dock:" "note"
     source "$SCRIPT_DIR/Usersettings/Dock.sh" > /dev/null
     # --> Add divider to Dock
@@ -1069,6 +1076,9 @@ if [ "$beautifyDock" = true ] && [ ! "$minimalDock" ]; then
     fi
     if [ "$installTelegram" = true ]; then
         addAppToDock "Telegram"
+    fi
+    if [ "$installAyuGram" = true ]; then
+        addAppToDock "AyuGram"
     fi
     if [ "$installTresorit" = true ]; then
         addAppToDock "Tresorit"

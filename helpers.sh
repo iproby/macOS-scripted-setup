@@ -10,7 +10,6 @@ function checkIfFileExists(){
         return 1 # false
     fi
 }
-export -f checkIfFileExists
 
 # Check if a variable is not empty and not whitespace
 function checkIfNotEmpty() {
@@ -22,14 +21,12 @@ function checkIfNotEmpty() {
         return 1 # false
     fi
 }
-export -f checkIfNotEmpty
 
 # Send a Beep to get attention in the Terminal
 function notify(){
     afplay /System/Library/Sounds/Blow.aiff
     open /System/Applications/Utilities/Terminal.app
 }
-export -f notify
 
 # echo a string to the CLI
 function showinfo(){
@@ -60,7 +57,6 @@ function showinfo(){
     fi
     echo -e "$echout"
 }
-export -f showinfo
 
 # Ask user a yes/no question-prompt in the Terminal - and return 0 for yes, 1 for no
 function ask() {
@@ -76,7 +72,6 @@ function ask() {
         esac
     done
 }
-export -f ask
 
 # Return boolean config variable names from a config file
 function get_boolean_config_names() {
@@ -100,7 +95,6 @@ function get_boolean_config_names() {
         }
     ' "$source_config"
 }
-export -f get_boolean_config_names
 
 # Load and/or crate a re-run config file
 function load_rerunconfig() {
@@ -113,7 +107,6 @@ function load_rerunconfig() {
         showinfo "Added a setup progress store based on $source_config" "confirm"
     fi
 }
-export -f load_rerunconfig
 
 # Remove an existing re-run config file (after successful setup)
 function discard_rerunconfig() {
@@ -122,7 +115,6 @@ function discard_rerunconfig() {
         showinfo "Removed the setup progress storage file (config.rerun.sh)" "note"
     fi
 }
-export -f discard_rerunconfig
 
 # Merge progress from re-run config with master config
 function set_installprogress() {
@@ -144,7 +136,6 @@ function set_installprogress() {
         fi
     fi
 }
-export -f set_installprogress
 
 # Store setup progress for re-runs
 function storeprogress() {
@@ -163,7 +154,6 @@ function storeprogress() {
         exit 1 # STOP SETUP
     fi
 }
-export -f storeprogress
 
 # Check if Mac is Apple Silicon (otherwise Intel x86)
 function checkIfAppleSilicon(){
@@ -174,7 +164,6 @@ function checkIfAppleSilicon(){
         return 1 # false
     fi
 }
-export -f checkIfAppleSilicon
 
 # Check if Mac is portable
 # (MacBook, MacBook Air, MacBook Pro)
@@ -185,7 +174,6 @@ function checkIfMacIsPortable(){
         return 1 # false
     fi
 }
-export -f checkIfMacIsPortable
 
 # Get logged-in user's Username
 function getUsername(){
@@ -193,7 +181,6 @@ function getUsername(){
     echo "$username"
     return 0
 }
-export -f getUsername
 
 # Check if current User is in admin group
 # Source: https://apple.stackexchange.com/a/179531/86244
@@ -206,7 +193,6 @@ function checkIfUserIsAdmin(){
         return 1 # false
     fi
 }
-export -f checkIfUserIsAdmin
 
 function macosGatekeeper(){
     if checkIfNotEmpty "$1"; then
@@ -233,7 +219,6 @@ function macosGatekeeper(){
         fi
     fi
 }
-export -f macosGatekeeper
 
 # Download a file from a given URL using curl
 function downloadFromUrl(){
@@ -253,7 +238,6 @@ function downloadFromUrl(){
         showinfo "Missing URL or download target path" "error"
     fi
 }
-export -f downloadFromUrl
 
 # Unzip a ZIP-file in place
 function unzipFile(){
@@ -265,7 +249,6 @@ function unzipFile(){
         showinfo "ZIP file not found:\n$filePath" "error"
     fi
 }
-export -f unzipFile
 
 # Unmount a DMG-image and copy App to Downloads folder
 function unmountFile(){
@@ -284,7 +267,6 @@ function unmountFile(){
         return 1 # error
     fi
 }
-export -f unmountFile
 
 # Move an Application to the User or System Applications folder
 # (and optionally open it upon moving)
@@ -318,7 +300,6 @@ function moveApplication(){
         return 1 # error
     fi
 }
-export -f moveApplication
 
 # Remove XProtect quarantine flags from a macOS File or Folder
 function disableAppQuarantine(){
@@ -326,4 +307,3 @@ function disableAppQuarantine(){
         xattr -cr "$1"
     fi
 }
-export -f disableAppQuarantine

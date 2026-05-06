@@ -50,13 +50,13 @@
 #     1. macOS System Services
 # ------------------------------
 # -- 1.1 Security --
-useFileVault=true
-enableFirewall=true
-disableShutdownRestartInLogin=true
-enableScreensaverPassword=true
+useFileVault=false
+enableFirewall=false
+disableShutdownRestartInLogin=false
+enableScreensaverPassword=false
 
 # -- 1.2 Time Machine --
-speedupTimemachine=true
+speedupTimemachine=false
 
 # -- 1.3 AirDrop --
 enableWiredAirDrop=true
@@ -65,7 +65,7 @@ enableWiredAirDrop=true
 installSystemUpdates=true
 
 # -- 1.5 Performance settings --
-betterApplicationPerformance=true
+betterApplicationPerformance=false
 
 # -- 1.6 System boot up --
 playMacStartupSound=true
@@ -83,17 +83,17 @@ removeiMovie=false
 installXcodeTools=false
 installHomebrew=true
 # (!) Requires Homebrew: installHomebrew=TRUE
-installAppStoreApps=true
-installRosetta=false
+installAppStoreApps=false
+installRosetta=true
 
 # -- 2.3 Install Finder Extensions --
 installKeka=true
-installQuickLookPlugins=true
+installQuickLookPlugins=false
 
 # -- 2.4 Install Applications --
 install1Password=false
-installAdGuardSafari=true
-installBonjourrStartpageForSafari=true
+installAdGuardSafari=false
+installBonjourrStartpageForSafari=false
 # (!) installAlDente: Only supported on MacBooks (MBA, MBP)
 installAlDente=false
 installBeyondCompare=false
@@ -106,25 +106,28 @@ installGrandPerspective=false
 installHalloyIRC=false
 installLinearMouse=false
 installMacsFanControl=false
-installMicrosoftOffice=false
+installMicrosoftOffice=true
 installNotion=false
 installNova=false
-installOverSight=true
+installOverSight=false
 installPixelmator=false
-installSentinel=true
+installSentinel=false
 installSpotify=false
 installStrongbox=false
 installTelegram=false
 installTransmission=false
 installTresorit=false
 installVisualStudioCode=false
-installVLC=false
+installVLC=true
 installWarp=false
 installXnapper=false
 # -- 2.4.1 Web Browsers --
 installBraveBrowser=false
-installFirefoxBrowser=false
+installFirefoxBrowser=true
 installGoogleChromeBrowser=false
+
+# -- 2.4.2 Messaging --
+installAyuGram=true
 
 # -- 2.5 Development Tools --
 # (i) gitUsername = visible Display Name; gitUseremail = visible Email address with git
@@ -157,34 +160,34 @@ installSteam=false
 # ------------------------------
 # -- 3.1 macOS Layout / User Interface --
 # ---- 3.1.1 Menu Bar ----
-dateTimeInMenubar=true
+dateTimeInMenubar=false
 enableFastUserswitching=true
-useMissionControl=true
-disableTransparency=true
+useMissionControl=false
+disableTransparency=false
 # (!) showBatteryPercentage: only applied on MacBooks (MBA, MBP)
 showBatteryPercentage=true
 # ---- 3.1.2 Window handling ----
 enableFullDraggableWindows=false
-showScrollbars=true
+showScrollbars=false
 # ---- 3.1.3 Text handling ----
-disableAnnoyingTextcorrections=true
+disableAnnoyingTextcorrections=false
 # ---- 3.1.4 Keyboard & Mouse ----
-disableNaturalScrolling=true
+disableNaturalScrolling=false
 # (!) enableTrackpadClicks: only applied on MacBooks (MBA, MBP)
 enableTrackpadClicks=true
-fasterMouseCursor=true
+fasterMouseCursor=false
 # (i) fnKeyFunction Modes: off=Do nothing, emoji=Emojis & Symbols, language=Input sources, dictation=Start Dictation
-fnKeyFunction='emoji'
+fnKeyFunction='off'
 enableTabFocusChange=false
-disableDoubleSpacePeriod=true
+disableDoubleSpacePeriod=false
 # ---- 3.1.5 Apple Apps ----
-useRealNamesForContacts=true
+useRealNamesForContacts=false
 showMusicNextSongPlaying=false
 showSubjectInMessagesApp=false
 
 # -- 3.2 macOS Finder customizations --
 # (!) If false, below settings will have NO effect
-customizeFinder=true
+customizeFinder=false
 # ---- 3.2.1 Files in Finder ----
 showFileExtensions=false
 # ---- 3.2.2 Screenshots ----
@@ -193,8 +196,8 @@ useScreenshotsFormat='png'
 useScreenshotsNumericFilename=false
 
 # -- 3.3 macOS Dock optimizations --
-speedupDock=true
-beautifyDock=true
+speedupDock=false
+beautifyDock=false
 minimalDock=false
 
 # -- 3.4 User Home folder --
@@ -223,10 +226,10 @@ useCustomTerminalConfigurationsURL=''
 # -- 3.6 Application Hardening --
 secureSafariBrowser=true
 # (i) Auto-remove items from Trash after 30 days
-removeTrashbinItemsPeriodically=true
+removeTrashbinItemsPeriodically=false
 
 # -- 3.7 Night Shift --
-enableNightShift=true
+enableNightShift=false
 
 # -- 3.8 Display --
 enableAllResolutions=false

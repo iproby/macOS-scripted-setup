@@ -122,7 +122,7 @@ Feel free to [fork this project](/../../fork) and add Pull Requests for any sugg
 
 ### Inspiration and Kudos
 
-A **BIG «THANK YOU»** to these inspiring and helfpful sources! 🫶 Make sure to check them out and leave a kudos.
+A **BIG «THANK YOU»** to these inspiring and helpful sources! 🫶 Make sure to check them out and leave a kudos.
 
 * Yann Bertrand's awesome work with «[macOS-defaults](https://github.com/yannbertrand/macos-defaults)»
 * Patrick Force's approach with «[macOSa](https://github.com/rockholla/macosa)» (which was a bit too complex for my use case…)
